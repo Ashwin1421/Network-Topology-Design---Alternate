@@ -244,15 +244,7 @@ if __name__ == '__main__':
             print('Invalid option %s.'%a)
             exit(1)
         else:
-            num_nodes = [i for i in range(N,N+5)]
-            for node in num_nodes:
-                output_data.append(Main(node, a).run())
-
-            plt.plot(num_nodes, output_data)
-            plt.xlabel('Number of nodes.')
-            plt.ylabel('Network Cost.')
-            plt.axis([min(num_nodes)-1, max(num_nodes)+1, min(output_data)-1, max(output_data)+1])
-            plt.savefig('Solution_'+a.lstrip('-').upper()+'_plot'+'.png')
+            Main(N, a).run()
             print('Took %s seconds to complete.'%(time()-start_time))
 
 
